@@ -1,0 +1,37 @@
+<html>
+
+<head></head>
+<div id="app">
+    <p v-if="hours < 12 ">早上好!</p>
+    <p v-if="hours >= 12 && hours < 18">中午好!</p>
+    <p v-if="hours >= 18">晚上好!</p>
+    <p>Hello ,{{greetee}}!</p>
+    <p v-if="path === '/'">你正位于首页</p>
+    <p v-else>你正位于{{path}}</p>
+    <p>{{dogs[1]}}</p>
+    <p>{{dogs}}</p>
+    <div v-show="true">one</div>
+    <div v-show="false">two</div>
+
+    <div v-if="state === 'loading'">加载中...</div>
+    <div v-else-if="state === 'error'">出错了...</div>
+    <div v-else>我们的内容!</div>
+
+
+</div>
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            hours: new Date().getHours(),
+            greetee: 'world',
+            path: location.pathname, // 当前页面URL路径值 
+            dogs: ['Rex', 'Rover', 'Alan'],
+            state: 'error'
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<html>
+<!--   
+     在方法中，this指向该方法所属的组件。可以使用this访问data对象的属性和其他方法：
+ -->
+
+<head></head>
+<div id="app">
+    <p>所有数的和是{{getPositiveSum()}}</p>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            numbers: [1, -5, -3, 0, 5, 2, 4, 3]
+        },
+        methods: {
+            filterPositive(numbers) {
+                return this.numbers.filter((number) => number > 0);
+            },
+            getPositiveSum() {
+                return this.filterPositive().reduce((sum, val) => sum + val);
+            }
+        }
+    });
+</script>
+
+</html>

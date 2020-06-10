@@ -1,0 +1,22 @@
+<html>
+
+<head></head>
+<div id="app">
+    <label> <input type="radio" v-model="value" value="一">一</label>
+    <label> <input type="radio" v-model="value" value="二">二</label>
+    <label> <input type="radio" v-model="value" value="三">三</label>
+    <p>当前选中的值{{value}}</p>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            value: '三'
+        }
+    });
+</script>
+
+</html>

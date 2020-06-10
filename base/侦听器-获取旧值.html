@@ -1,0 +1,30 @@
+<html>
+<!--   
+     在方法中，this指向该方法所属的组件。可以使用this访问data对象的属性和其他方法：
+ -->
+
+<head></head>
+<div id="app">
+    <input type="text" v-model="inputValue"></input>
+    <p>5秒后显示输入的值"{{oldInputValue}}"</p>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            inputValue: '',
+            oldInputValue: ''
+        },
+        watch: {
+            // 当前值,之前值
+            inputValue(val, oldValue) {
+                console.log(val, oldValue);
+            }
+        }
+    });
+</script>
+
+</html>

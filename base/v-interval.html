@@ -1,0 +1,35 @@
+<html>
+
+<head></head>
+<div id="app">
+    <!-- <button v-bind:type="buttonType">Test Button </button> -->
+
+    <p>{{formData.name}}</p>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    // new Vue({
+    //     el: '#app',
+    //     data: {
+    //         seconds: 0
+    //     },
+    //     created() {
+    //         setInterval(() => {
+    //             this.seconds++;
+    //         }, 1000);
+    //     },
+    // });
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            formData: {
+                name: 'hello world'
+            }
+        }
+    });
+</script>
+
+</html>

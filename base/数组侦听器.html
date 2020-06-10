@@ -1,0 +1,34 @@
+<html>
+<!--   
+     在方法中，this指向该方法所属的组件。可以使用this访问data对象的属性和其他方法：
+ -->
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<div id="app">
+    <ul>
+        <li v-for="(name,index in dogs">
+            {{name}}---
+            <button @click="updateP(index,'kolnick')">更新</button>
+        </li>
+    </ul>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            dogs: ['Rex', 'Rover', 'Alan'],
+        },
+        methods: {
+            updateP(index, name) {
+                this.dogs.splice(index, 1, name);
+            }
+        }
+    });
+</script>
+
+</html>

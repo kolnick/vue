@@ -1,0 +1,27 @@
+<html>
+
+<head></head>
+<div id="app">
+    <ul>
+        <li v-for="number in filterPositive(numbers)">{{number}}</li>
+    </ul>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            numbers: [1, -5, -3, 0, 5, 2, 4, 3]
+        },
+        methods: {
+            filterPositive(numbers) {
+                return numbers.filter((number) => number > 0);
+            }
+        },
+    });
+</script>
+
+</html>

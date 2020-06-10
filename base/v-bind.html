@@ -1,0 +1,20 @@
+<html>
+
+<head></head>
+<div id="app">
+    <button v-bind:type="buttonType">Test Button </button>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            buttonType: 'submit'
+        }
+    });
+</script>
+
+</html>

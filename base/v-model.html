@@ -1,0 +1,21 @@
+<html>
+
+<head></head>
+<div id="app">
+    <input type="text" v-model="inputText">
+    <p>inputText:{{inputText}}</p>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            inputText: 'init text'
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+<!--   
+     在方法中，this指向该方法所属的组件。可以使用this访问data对象的属性和其他方法：
+ -->
+
+<head></head>
+<div id="app">
+    <p>所有数的和是{{numberTotal}}</p>
+    <p>所有数的和是{{numberTotal}}</p>
+    <p>所有数的和是{{numberTotal}}</p>
+    <p>所有数的和是{{numberTotal}}</p>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            numbers: [5, 8, 3]
+        },
+        computed: {
+            numberTotal: {
+                get() {
+
+                    return this.numbers.reduce((sum, val) => sum + val)
+                },
+                set(newValue) {
+                    const oldValue = this.numberTotal;
+                    const difference = newValue - oldValue;
+                    this.numbers.push(difference);
+                }
+            }
+        }
+
+    });
+</script>
+
+</html>

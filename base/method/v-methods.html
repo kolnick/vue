@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+<div id="app">
+    <p>当前状态:{{statusFromId(status)}}</p>
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            status: 4,
+        },
+        methods: {
+            statusFromId(id) {
+                const status = ({
+                    0: '睡觉',
+                    1: '吃饭',
+                    2: '学习Vue'
+                })[id];
+                return status || '未知状态:' + id;
+            }
+        }
+    });
+</script>
+
+</html>

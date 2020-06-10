@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<div id="app">
+    <ul>
+        <li v-for="dog in dogs">
+            {{dog}}---
+            <button @click="deleteP(index)">删除</button>
+            ---
+            <button @click="updateP(index,{name:'kolnick'})">更新</button>
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="(rent,city) in averageRent">{{city}}的平均租金是${{rent}}</li>
+    </ul>
+    <ul>
+        <!--  -->
+        <li v-for="rent in averageRent">平均租金是${{rent}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="n in 10">{{n}}</li>
+    </ul>
+
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            dogs: ['Rex', 'Rover', 'Alan'],
+            averageRent: {
+                london: 1650,
+                paris: 1730,
+                NYC: 3680
+            }
+        },
+        methods: {
+            deleteP(index) {
+                this.dogs.splice(index, 1);
+            },
+            updateP(index, newValue) {
+                this.dogs[index] = newValue;
+            }
+        }
+    });
+</script>
+
+</html>

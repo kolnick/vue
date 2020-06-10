@@ -1,0 +1,45 @@
+<html>
+
+<head></head>
+<div id="app">
+    <button @click="test1($event)">按钮1</button>
+    <button @click="test2(123,$event)">按钮1</button>
+</div>
+
+<div style="width: 300px; height: 200px; background: yellow" @click="test1">
+    <div style="width: 100px; height: 200px; background: red" @click="test2"></div>
+</div>
+
+<input type="text" @keyup.enter="test8">
+
+<a href="http://www.baidu.com" @click="test">去百度</a>
+<script src="../../vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+
+            test8(event) {
+                console.log(event.target.value);
+                if (event.keyCode === 13) {
+                    console.log(event.target.valueOf());
+                }
+            }
+        },
+
+        methods: {
+            test() {
+                console.log("32323");
+            },
+
+            test1() {
+                alert(1)
+            },
+            test2() {
+                alert(2)
+            },
+        }
+    });
+</script>
+
+</html>
